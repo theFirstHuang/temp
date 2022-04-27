@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>COMP90024 Assignemnt 2</title>
+    <link href="./main.css", rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.2.1/echarts.min.js"></script>
+    <script type="moudle" src="https://cdn.jsdelivr.net/npm/echarts-wordcloud@2.0.0/index.min.js"></script>
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>COMP90024 Assignment 2</h1>
+    </div>
+
+    <div class="main_section">
+        <h2>Introduction</h2>
+        <p>In this project, we use ...</p>
+        <h2>Data analysis</h2>
+
+        <div class="header">
+            <h3>House price from 2017 to 2021 in Melbourne</h3>
+        </div>
+
+        <div class="hp_lineChart">
+            <div id="hp_lineChart" style="height:400px; width:800px; margin-left: 350px;"></div>
+        </div>
+
+        <hr>
+
+        <div class="header">
+            <h3>Vaccine Dose Percentage in Melbourne</h3>
+        </div>
+
+        <div class="bar_line_chart">
+            <div id="melb_city_vac" style="height: 500px; width: 800px; margin-left: 300px;"></div>
+        </div>
+
+        <hr>
+
+        <div class="govern_senti">
+            <h3>People's sentiment on the government</h3>
+            <p style="margin-bottom: 50px;">In this section, we did a sentiment anaylsis about people's sentiment on the government. We also add prime minister and premier of Victoria 
+                to the search  keywords in filtering the stream.
+            <div id="pie_chart" style="height: 500px; width: 800px; margin-left: 350px"></div>
+            </p>
+            <div id="histogram" style="height: 500px; width: 800px; margin-left: 350px"></div>
+        </div>
+    </div>
+    
+    
+
+<script type = "module" src="lineChart.js"></script>
+<script type = "module" src="vic_vaccine.js"></script>
+<script type = "module" src="pie_chart.js"></script>
+<script type = "module" src="histogram.js"></script>
+</body>

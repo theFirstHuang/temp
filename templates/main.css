@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+.main_section{
+    margin-left: 20px;
+    font-family: sans-serif;
+    margin-bottom: 50px;
+}
+
+.header {
+    color: #2e3b69;
+    text-align: center;
+    margin-bottom: 50px;
+    /* max-width: 52em;  */
+    /* margin: auto; */
+}
+
+h3 {
+    color: #2e3b69;
+    text-align: center;
+    margin-bottom: 50px;
+    /* max-width: 52em;  */
+    /* margin: auto; */
+}
+
+
