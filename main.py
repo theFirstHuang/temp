@@ -1,13 +1,13 @@
 from flask_cors import *
 from flask import Flask,render_template,request,Response,redirect,url_for
 import json
-# import couchdb
-# couch = couchdb.Server()
-# db_address = 'http://admin:123456@172.26.129.187:5984/'
-# try:
-#     couchServer =  couchdb.Server(db_address)
-# except Exception as e:
-#     print(e)
+import couchdb
+couch = couchdb.Server()
+db_address = 'http://admin:123456@172.26.129.187:5984/'
+try:
+    couchServer =  couchdb.Server(db_address)
+except Exception as e:
+    print(e)
 
 
 app = Flask(__name__)
