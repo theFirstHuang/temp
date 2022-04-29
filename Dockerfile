@@ -1,4 +1,3 @@
-#设置python环境镜像
 FROM python:3.8
 
 # store in /project

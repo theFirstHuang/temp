@@ -8,6 +8,9 @@
     </head>
     <body style="height: 100%; margin: 0">
         <div id="container" style="height: 100%"></div>
+        <div class="hp_lineChart">
+            <div id="hp_lineChart" style="height:400px; width:800px; margin-left: 350px;"></div>
+        </div>
         <script type="text/javascript" src="../static/js/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
         <!-- Uncomment this line if you want to dataTool extension
@@ -33,7 +36,7 @@
 
             type:'GET',
             //data
-            url:"http://127.0.0.1:5000/pie_nest_data",
+            url:"http://127.0.0.1:2889/pie_nest_data",
             dataType:'json',
             success:function(data){
                 console.log(data);
@@ -48,7 +51,7 @@
                         formatter: '{a} <br/>{b}: {c} ({d}%)'
                     },
                     legend: {
-                        data: data['data1']
+                        data: data['data_legend']
                     },
                     series: [
                         {
@@ -115,7 +118,51 @@
                 }
               }
           });
-        </script>
+          </script>
+          <script type="text/javascript">
+          $.ajax({
+
+            type:'GET',
+            //data
+            url:"http://127.0.0.1:2889/chart_data",
+            dataType:'json',
+            success:function(data){
+                console.log(data);
+                var chartDom = document.getElementById('hp_lineChart');
+                var myChart = echarts.init(chartDom);
+                var option;
+          
+                option = {
+                //   title: {
+                //     text: 'House Price from 2017 to 2021 in Melbourne'
+                //   },
+                  tooltip: {
+                    trigger: 'axis'
+                  },
+                  xAxis: {
+                    type: 'category',
+                    data: ['2017', '2018', '2019', '2020', '2021']
+                  },
+                  yAxis: {
+                    type: 'value'
+                  },
+                  series: [
+                    {
+                     /* data: [
+                        1752534.3599999999, 1676329.3, 1651656.94, 1770922.6199999999,
+                        2021429.28
+                      ],*/
+                      data: data['data10'],
+                      type: 'line'
+                    }
+                  ]
+                };
+          
+                option && myChart.setOption(option);
+              }
+          });
+          </script>
+        
     </body>
 </html>
     
